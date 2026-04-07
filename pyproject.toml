@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart_grid_env"
+version = "1.0.0"
+description = "AI agent manages home HVAC and battery against real-time grid prices."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic==2.6.4",
+    "numpy==1.26.4",
+    "openai==1.14.0",
+    "fastapi==0.110.0",
+    "uvicorn==0.29.0"
+]
