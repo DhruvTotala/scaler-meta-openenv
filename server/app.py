@@ -35,6 +35,10 @@ def step_env(action: AgentAction):
         "info": info
     }
 
-# The mandatory entry point
-def start():
+# The mandatory main function
+def main():
     uvicorn.run("server.app:app", host="0.0.0.0", port=7860)
+
+# The mandatory callable block
+if __name__ == "__main__":
+    main()
