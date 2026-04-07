@@ -9,11 +9,11 @@ description = "AI agent manages home HVAC and battery against real-time grid pri
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "pydantic==2.6.4",
-    "numpy==1.26.4",
-    "openai==1.14.0",
-    "fastapi==0.110.0",
-    "uvicorn==0.29.0",
+    "pydantic",
+    "numpy",
+    "openai",
+    "fastapi",
+    "uvicorn",
     "openenv-core>=0.2.0"
 ]
 
