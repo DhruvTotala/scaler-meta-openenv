@@ -1,5 +1,5 @@
 import random
-from .models import GridState, AgentAction
+from models import GridState, AgentAction
 
 class SmartGridEnv:
     def __init__(self, target_temp=22.0):
