@@ -1,9 +1,9 @@
 import os
 import json
 from openai import OpenAI
-from core.env import SmartGridEnv
-from core.models import AgentAction
-from core.tasks import EasyTask, MediumTask, HardTask
+from env import SmartGridEnv
+from models import AgentAction
+from tasks import EasyTask, MediumTask, HardTask
 
 API_BASE_URL = os.getenv("API_BASE_URL", "https://api-inference.huggingface.co/v1/")
 MODEL_NAME = os.getenv("MODEL_NAME", "meta-llama/Meta-Llama-3-8B-Instruct")
