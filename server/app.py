@@ -1,20 +1,25 @@
+import sys
+import os
+import uvicorn
 from fastapi import FastAPI
+
+# This ensures Python can still find your env.py file in the main folder
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from env import SmartGridEnv
 from models import AgentAction
 
 app = FastAPI()
 env = SmartGridEnv()
 
-# The grader explicitly checks this!
 @app.get("/")
 def read_root():
-    return {"status": "ok"} # Returns the mandatory 200 OK
+    return {"status": "ok"}
 
 @app.post("/reset")
 @app.get("/reset")
 def reset_env():
-    state = env.reset()
-    return state.model_dump()
+    return env.reset().model_dump()
 
 @app.get("/state")
 def get_state():
@@ -29,3 +34,7 @@ def step_env(action: AgentAction):
         "done": done,
         "info": info
     }
+
+# The mandatory entry point
+def start():
+    uvicorn.run("server.app:app", host="0.0.0.0", port=7860)
