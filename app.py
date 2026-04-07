@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from core.env import SmartGridEnv
-from core.models import AgentAction
+from env import SmartGridEnv
+from models import AgentAction
 
 app = FastAPI()
 env = SmartGridEnv()
