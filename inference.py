@@ -5,8 +5,11 @@ from env import SmartGridEnv
 from models import AgentAction
 from tasks import EasyTask, MediumTask, HardTask
 
-API_BASE_URL = os.getenv("API_BASE_URL", "https://api-inference.huggingface.co/v1/")
-MODEL_NAME = os.getenv("MODEL_NAME", "meta-llama/Meta-Llama-3-8B-Instruct")
+# FIX 1: No trailing slash
+API_BASE_URL = os.getenv("API_BASE_URL", "https://api-inference.huggingface.co/v1")
+
+# FIX 2: Ungated open model
+MODEL_NAME = os.getenv("MODEL_NAME", "mistralai/Mistral-7B-Instruct-v0.3")
 
 client = OpenAI(
     api_key=os.getenv("OPENAI_API_KEY", os.getenv("HF_TOKEN", "dummy")), 
